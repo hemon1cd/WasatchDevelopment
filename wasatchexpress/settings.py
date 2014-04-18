@@ -49,7 +49,7 @@ TEMPLATE_LOADERS = (
 
 
 TEMPLATE_DIRS = (
-	'/home/hemon1cd/WasatchDevlopment/express/Templates',
+	'/home/hemon1cd/WasatchDevelopment/express/Templates',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

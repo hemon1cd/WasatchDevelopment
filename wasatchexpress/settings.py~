@@ -39,7 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'express',
-)	'south',
+	'south',
+)
 
 TEMPLATE_LOADERS = (
 	'django.template.loaders.filesystem.Loader',
