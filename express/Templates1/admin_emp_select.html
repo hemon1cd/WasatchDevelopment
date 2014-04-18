@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+
+{% block body %}
+
+<div data-role="header">
+<a href="#" data-type="button">
+Edit
+</a>
+
+<a href="#" data-type="button">
+New
+</a>
+
+<h1>Employee Edit/Add</h1>
+
+
+
+<div>
+     <label for="existing">Existing Employees</label>
+    
+     <select name="existing" id="existing" data-native-menu="false" data-iconpos="left" data-mini="true">
+         <option>Choose..</option>
+         <option value="#">{{employee}}</option>
+
+</div>
+
+</div>
+
+
+{% endblock body %}
+
+
+=======
+	
+>>>>>>> 513e0f130373a0650a04cbcbbb5665c2610916f7

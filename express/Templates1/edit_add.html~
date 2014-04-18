@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+
+{% block body %}
+<<<<<<< HEAD
+
+<h1>Edit/Add</h1>
+
+<div>
+     <label for="client">Client</label>
+    
+     <input type="text" value="{{client}}">
+    
+    
+     </div>
+     <div>
+     <label for="product">Product</label>
+    
+    <input type="text" value="{{product}}">
+    
+     </div>
+     <div>
+     <label for="type">Type</label>
+    
+     <input type="text" value="{{type}}">
+</div>
+<div>
+<label>Serial Number/ID</lable>
+
+<input type="text" value="{{product id}}">
+
+</div>
+<div>
+<label>Date</lable>
+<input data-role="date" type="text" value="{{last serviced}}">
+
+</div>
+<div>
+<label>Location</lable>
+
+<input type="text" value="{{location}}">
+
+</div>
+
+======
+		
+>>>>>>> 513e0f130373a0650a04cbcbbb5665c2610916f7
+{% endblock body %}

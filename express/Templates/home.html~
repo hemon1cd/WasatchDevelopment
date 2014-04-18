@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+
+
+{% block body %}
+
+<h2><center> Upcoming Expirations <center></h2>
+
+<div data-role="content">
+
+	<table data-role='table' id="upcoming" data-mode="columntoggle" class="ui-responsive table-stroke ui-table ui-table-columntoggle table-stripe ui-body-d">
+		<thead>
+				<tr>
+
+						<th>Expiration Date</th>
+
+				</tr>
+		</thead>
+		
+		<tbody>
+			    {% for products in Product %}
+				<tr>
+						<td>hi</td>
+				</tr>
+
+				{% empty %}	
+			
+				<tr>
+						<td>No Upcoming Expirations!</td>
+				</tr>
+				{% endfor %}
+
+		</tbody>
+		
+		<tfoot>
+		
+		</tfoot>
+		
+	</table>
+</div>
+		
+{% endblock body %}

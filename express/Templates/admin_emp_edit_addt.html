@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block body %}
+				
+				<h2><center>Employee Edit/Add</center></h2>
+	
+		<div>
+    			<label for="EmployeeID">ID</label>
+    			
+    			<input type="text" value="{{ID}}" disabled="true">			
+    	</div><!-- ID -->
+    	
+    	<div>
+    			<label for="name">Name</label>
+    			
+   				<input type="text" value="{{name}}" placeholder="Name">	
+    	</div><!-- Name -->
+    	
+    	<div>
+    			<label for="password">Password</label>
+    			
+    			<input type="text" value="{{password}}" placeholder="Password">
+		</div><!-- Password -->
+		
+		<div>
+    			<label for="type">Type</label>
+    			
+    			<select name="type" id="type" data-native-menu="false" data-iconpos="left" data-mini="true">
+        				<option>Employee Type</option>
+        				<option value="#">Admin</option>
+						<option value="#">Employee</option>			
+		</div><!-- Type -->
+		
+		<!-- "Save" Button -->
+		<a href="#" data-role="button" data-mini="true">Save</a>
+		
+{% endblock body %}

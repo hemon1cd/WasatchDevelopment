@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+
+{% block body %}
+		 <h2><center> Log In <center></h2>
+
+		 <form name="login" action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+
+                <input type="submit" class="login" value="Login" data-theme="a" data-role="button" data-ajax="false">
+
+
+            <!-- This is a button that will take you dirently to a different screen, there is no authentication involved (as far as I know)
+            Jon: This is the 'Creat Account' button in Taylor's Cottage Inn application -->
+    	<!--<p><a href="{% url 'home' %}" data-role="button" data-theme="a" data-inline="true" data-shadow="false" style="width:100%; text-align:center;">Sign In!</a></p>-->
+
+            </form>
+
+            <script>
+
+
+            </script>
+
+{% endblock body %}

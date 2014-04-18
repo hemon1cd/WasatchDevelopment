@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+
+
+
+{% block body %}
+
+<h1>New Service</h1>
+
+<div>
+<label for="servicetype">Service Type</label>
+<select name="servicetype" id="servicetype" data-native-menu="false" data-mini="true" data-iconpos="left">
+<option value="#" selected="true">Maintenance</option>
+<option value="#">Installation</option>
+</select>
+</div>
+<div>
+     <label for="client">Client</label>
+    
+     <select name="client" id="client" data-native-menu="false" data-iconpos="left" data-mini="true">
+         <option>All</option>
+         <option value="#">{{client}}</option>
+         <option value="#">{{client}}</option>
+         <option value="#">{{client}}</option>
+     </select>
+     </div>
+     <div>
+<label for="location">Location</label>
+
+<select name="location" id="location" data-native-menu="false" data-iconpos="left" data-mini="true">
+<option value="#">{{location}}</option>
+<option value="#">{{location}}</option>
+<option value="#">{{location}}</option>
+</select>
+</div>
+     <div>
+     <label for="product">Product</label>
+    
+    <select name="product" id="product" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
+         <option>All</option>
+         <option value="#">{{Eyewash}}</option>
+         <option value="#">{{AED}}</option>
+         <option value="#">{{Battery}}</option>
+     </select>
+     </div>
+     <div>
+     <label for="type">Type</label>
+    
+     <select name="type" id="type" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true" disabled="disabled">
+<option>All</option>
+<option value="#">All</option>
+     </select>
+</div>
+
+
+
+=======
+	
+>>>>>>> 513e0f130373a0650a04cbcbbb5665c2610916f7
+{% endblock body %}

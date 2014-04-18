@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+
+{% block body %}
+		<h2><center>Search<center></h2>
+				
+		<div>
+    			<label for="client">Client</label>
+    			
+    			<select name="client" id="client" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
+        				<option>All</option>
+        				<option value="#">{{client}}</option>
+        				<option value="#">{{client}}</option>
+        				<option value="#">{{client}}</option>
+    			</select>
+    	</div>
+    	<div>
+    			<label for="product">Product</label>
+    			
+   				<select name="product" id="product" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
+        				<option>All</option>
+        				<option value="#">{{Eyewash}}</option>
+        				<option value="#">{{AED}}</option>
+        				<option value="#">{{Battery}}</option>
+    			</select>
+    	</div>
+    	<div>
+    			<label for="type">Type</label>
+    			
+    			<select name="type" id="type" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true" disabled="disabled">
+				        <option>All</option>
+				        <option value="#">All</option>
+    			</select>
+		</div>
+		<div>
+				<label>Date Start</lable>
+				<input data-role="month" type="text">
+				
+		</div>
+		<div>
+				<label>Date End</lable>
+				<input data-role="month" type="text">
+				
+		</div>
+		
+		<!-- "Search" Button -->
+		<a href="#" data-role="button" name="search" data-mini="true">Search</a>
+		
+{% endblock body %}

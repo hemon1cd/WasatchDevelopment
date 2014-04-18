@@ -1,0 +1,11 @@
+from express.models import userlogin
+from django.contrib import admin
+from express.models import product, service, client, aed, eyewash
+# Register your models here.
+
+admin.site.register(userlogin)
+admin.site.register(product)
+admin.site.register(service)
+admin.site.register(client)
+admin.site.register(aed)
+admin.site.register(eyewash)

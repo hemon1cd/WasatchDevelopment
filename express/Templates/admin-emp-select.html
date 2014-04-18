@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block body %}
+		
+<h2><center>Employee</center></h2>
+
+		<div>
+    			<label for="existing">Existing Employees</label>
+    			
+    			<select name="existing" id="existing" data-native-menu="false" data-iconpos="left" data-mini="true">
+        				<option>Choose..</option>
+        				<option value="#">{{employee}}</option>		
+
+        </div> <!-- Exisiting Employees -->
+		
+				<!-- "Edit" Button -->
+				<a href="#" data-role="button" name="edit" data-mini="true">Edit</a>
+				
+				<!-- "New" Button -->
+				<a href="#" data-role="button" name="new" data-mini="true">New</a>
+		
+{% endblock body %}

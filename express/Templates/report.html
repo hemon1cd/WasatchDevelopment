@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+
+{% block body %}
+
+<h2><center>Report<center></h2>
+
+<table data-role='table' id="report" data-mode="columntoggle" class="ui-responsive table-stroke ui-table ui-table-columntoggle table-stripe ui-body-d">
+		<thead>
+				<tr>
+						<th>Select</th>
+						<th>Date</th>
+						<th>Client</th>
+						<th>Product</th>
+				</tr>
+		</thead><!-- table header -->
+		
+		<tbody>
+				<tr>
+						<td><input type="checkbox" value="#"></td>
+						<td>${{date}}</td>
+						<td>${{client}}</td>
+						<td>${{product}}</td>
+				</tr>
+		</tbody><!-- table body -->
+		
+		<tfoot>
+		
+		</tfoot>
+		
+</table>
+
+		<!-- "Serviced" Button -->
+		<a href="#" data-role="button" name="serviced" data-mini="true">Serviced</a>
+		
+		
+{% endblock body %}
