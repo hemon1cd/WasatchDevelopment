@@ -21,7 +21,7 @@
 		<tbody>
 			    {% for products in Product %}
 				<tr>
-						<td>{{product.expiration_date}}</td>
+						<td>{{hi}}</td>
 				</tr>
 
 				{% empty %}	
