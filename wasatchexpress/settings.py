@@ -10,9 +10,13 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import django
+
+#LOCAL_PATH = os.path.normpath(os.path.join(os.path.dirname(__file__)))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-
+print BASE_DIR
+# DJANGO_ROOT = os.path.dirname(os.path.dirname(django.__file__))
+# SITE_ROOT = os.path.dirname(os.path.dirname(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -32,7 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
-'django.contrib.contenttypes',
+	'django.contrib.contenttypes',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -49,8 +53,14 @@ TEMPLATE_LOADERS = (
 
 
 TEMPLATE_DIRS = (
-	'/home/hemon1cd/WasatchDevelopment/express/Templates',
+    os.path.join(BASE_DIR,'express/Templates'),
 )
+
+print TEMPLATE_DIRS
+
+
+#	'/home/hemon1cd/WasatchDevelopment/express/Templates',
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -122,3 +132,4 @@ LOGGING = {
         },
     }
 }
+

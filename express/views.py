@@ -89,7 +89,7 @@ def login(request,template_name="login.html"):
 
             #return the same form and say login failed
 
-        return HttpResponseRedirect('/home/hemon1cd/WasatchDevelopment/express/Templates/login.html')
+        return HttpResponseRedirect('login.html')
 
     return render(template_name, context, context_instance=RequestContext(request))
 
@@ -98,7 +98,7 @@ def logout(request,template_name="login.html"):
     try:
         context['do_not_show_menu'] = True
         logout(request)
-        return HttpResponseRedirect("/home/hemon1cd/WasatchDevelopment/express/Templates/login.html")
+        return HttpResponseRedirect("home.html")
     except:
         pass
 
