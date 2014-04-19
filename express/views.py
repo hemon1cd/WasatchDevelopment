@@ -90,7 +90,10 @@ def login(request,template_name="login.html"):
             pass
 
             #return the same form and say login failed
-
+            
+	# See this? This is wrong. We don't redirect to templates, we redirect to views.
+	# For example: HttpResponseRedirect('/userlogin')
+	# I'm going to let you fix this one and the one under it. 
         return HttpResponseRedirect('/home/hemon1cd/WasatchDevelopment/express/Templates/login.html')
 
     return render(template_name, context, context_instance=RequestContext(request))
