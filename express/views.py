@@ -51,11 +51,13 @@ def home(request, template_name="home.html"):
 			
 	upcoming = Product.objects.all()
 
-	context = ['upcoming']
+	context['upcoming'] = upcoming
 
 	try:
 			everything = Product.objects.all()
-			context = ['everything']
+			# This is wrong.
+			# context = ['everything']
+			context['everything'] = everything
 	except:
 			pass
 
