@@ -48,13 +48,14 @@ def home(request, template_name="home.html"):
 
 	start_date = datetime.date.today()
 	end_date = datetime.date.today() + datetime.timedelta(days=30)
-			
+	jon_date = datetime.date.today() + datetime.timedelta(days=60)
+
 	products = Product.objects.all()
 
 	context['products'] = products
 
 	try:
-			upcoming = (start_date,end_date)
+			upcoming = (start_date,end_date,jon_date,start_date)
 			
 			context['upcoming_expirations'] = upcoming
 	except:
