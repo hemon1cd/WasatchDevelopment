@@ -1,6 +1,6 @@
 """
 Django settings for wasatchexpress project.
-
+#kids shouldn't do drugs
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
 
