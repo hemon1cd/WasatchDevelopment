@@ -33,9 +33,9 @@ class Product (models.Model):
 		ordering = ['-expiration_date', 'product_type']
 
 	product_types = (
-	('A','AED'),
+	('AED','AED'),
 	#('B','Battery'),
-	('E','EyeWash'),
+	('EyeWash','EyeWash'),
 	)
 	product_id = models.CharField(max_length=250, primary_key=True)
 	location = models.CharField(max_length=250, null=True)

@@ -7,15 +7,16 @@
 				
 		<div>
     			<label for="client">Client</label>
-    			
+
     			<select name="client" id="client" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
-        				<option>All</option>
-        				<option value="#">{{client}}</option>
-        				<option value="#">{{client}}</option>
-        				<option value="#">{{client}}</option>
+        		{% for cli in clients %}
+                        <option>All</option>
+        				<option value="#">{{cli.company_name}}</option>
     			</select>
+                {% endfor %}
     	</div>
-    	<div>
+
+        <div>
     			<label for="product">Product</label>
     			
    				<select name="product" id="product" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">

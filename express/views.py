@@ -16,6 +16,11 @@ import datetime
 from express.forms import userloginform, userprofileform
 from django.db.models import Q
 
+date = datetime.date.today()
+start_week = date - datetime.timedelta(date.weekday())
+end_week = start_week + datetime.timedelta(7)
+
+
 
 def admin_emp_edit_add(request,template_name="admin_emp_edit_add.html"):
 	context = {}
@@ -41,6 +46,17 @@ def edit_add(request,template_name="edit_add.html"):
 	
 	return render(template_name, context, context_instance=RequestContext(request))
 
+@login_required(login_url='/express/Templates/login')
+def search(request,template_name="search.html"):
+    context = {}
+
+    clients = Client.objects.all()
+
+    context['clients'] = clients
+
+
+    return render(template_name, context, context_instance=RequestContext(request))
+
 
 @login_required(login_url='/express/Templates/login')
 def home(request, template_name="home.html"):
@@ -50,7 +66,7 @@ def home(request, template_name="home.html"):
 	end_date = datetime.date.today() + datetime.timedelta(days=30)
 	jon_date = datetime.date.today() + datetime.timedelta(days=60)
 
-	products = Product.objects.all()
+ 	products = Product.objects.all()#(expiration_date__range=[start_week, end_week])
 
 	context['products'] = products
 
@@ -94,7 +110,7 @@ def login(request,template_name="login.html"):
 	# See this? This is wrong. We don't redirect to templates, we redirect to views.
 	# For example: HttpResponseRedirect('/userlogin')
 	# I'm going to let you fix this one and the one under it. 
-        return HttpResponseRedirect('/home/hemon1cd/WasatchDevelopment/express/Templates/login.html')
+        return HttpResponseRedirect('/home')
 
     return render(template_name, context, context_instance=RequestContext(request))
 
@@ -103,7 +119,7 @@ def logout(request,template_name="login.html"):
     try:
         context['do_not_show_menu'] = True
         logout(request)
-        return HttpResponseRedirect("/home/hemon1cd/WasatchDevelopment/express/Templates/login.html")
+        return HttpResponseRedirect('/logout')
     except:
         pass
 
@@ -115,11 +131,6 @@ def report(request,template_name="report.html"):
 	
 	return render(template_name, context, context_instance=RequestContext(request))
 
-def search(request,template_name="search.html"):
-	context = {}
-	context[''] = ""
-
-	return render(template_name, context, context_instance=RequestContext(request))
 
 def service(request,template_name="service.html"):
 	context = {}

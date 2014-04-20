@@ -16,6 +16,6 @@ urlpatterns = patterns('',
 	url(r'^report','express.views.report',name="report"),
 	url(r'^search','express.views.search',name="search"),
 	url(r'^service','express.views.service',name="service"),
-	url(r'^logout','express.views.logout',name="logout"),
+	url(r'^logout','express.views.login',name="logout"),
 
 )
