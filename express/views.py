@@ -54,9 +54,13 @@ def search(request,template_name="search.html"):
 
     context['clients'] = clients
 
+    products = Product.objects.all()
+
+    context['products'] = products
 
     return render(template_name, context, context_instance=RequestContext(request))
 
+    print products
 
 @login_required(login_url='/express/Templates/login')
 def home(request, template_name="home.html"):

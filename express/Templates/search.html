@@ -9,21 +9,22 @@
     			<label for="client">Client</label>
 
     			<select name="client" id="client" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
-        		{% for cli in clients %}
-                        <option>All</option>
+                        <option value="#">All</option>
+                        {% for cli in clients %}
         				<option value="#">{{cli.company_name}}</option>
+                         {% endfor %}
     			</select>
-                {% endfor %}
+
     	</div>
 
         <div>
     			<label for="product">Product</label>
     			
    				<select name="product" id="product" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
-        				<option>All</option>
-        				<option value="#">{{Eyewash}}</option>
-        				<option value="#">{{AED}}</option>
-        				<option value="#">{{Battery}}</option>
+        				<option value="#">All</option>
+                        {% for prod in products %}
+        				<option value="#">{{prod.product_type}}</option>
+                        {% endfor %}
     			</select>
     	</div>
     	<div>
@@ -35,12 +36,12 @@
     			</select>
 		</div>
 		<div>
-				<label>Date Start</lable>
+				<label>Date Start</label>
 				<input data-role="month" type="text">
 				
 		</div>
 		<div>
-				<label>Date End</lable>
+				<label>Date End</label>
 				<input data-role="month" type="text">
 				
 		</div>
