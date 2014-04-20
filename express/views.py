@@ -50,7 +50,7 @@ def edit_add(request,template_name="edit_add.html"):
 def search(request,template_name="search.html"):
     context = {}
 
-    clients = Client.objects.all()
+    clients = Client.objects.all().order_by('company_name')
 
     context['clients'] = clients
 
@@ -70,7 +70,7 @@ def home(request, template_name="home.html"):
 	end_date = datetime.date.today() + datetime.timedelta(days=30)
 	jon_date = datetime.date.today() + datetime.timedelta(days=60)
 
- 	products = Product.objects.all()#(expiration_date__range=[start_week, end_week])
+ 	products = Product.objects.all().order_by('client')#.filter(expiration_date__range=[start_week, end_week]).order_by('client_id')
 
 	context['products'] = products
 
@@ -137,10 +137,22 @@ def report(request,template_name="report.html"):
 
 
 def service(request,template_name="service.html"):
-	context = {}
-	context[''] = ""
-	
-	return render(template_name, context, context_instance=RequestContext(request))
+
+    context = {}
+
+    clients = Client.objects.all().order_by('company_name')
+
+    context['clients'] = clients
+
+    locations = Product.objects.all()
+
+    context['locations'] = locations
+
+    products = Product.objects.all()
+
+    context['products'] = products
+
+    return render(template_name, context, context_instance=RequestContext(request))
 
 def employee(request):
 	context = {}

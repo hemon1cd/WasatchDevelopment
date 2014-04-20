@@ -14,33 +14,33 @@
 		</div>
 		<div>
     			<label for="client">Client</label>
-    			
-    			<select name="client" id="client" data-native-menu="false" data-iconpos="left" data-mini="true">
-        				<option>All</option>
-        				<option value="#">{{client}}</option>
-        				<option value="#">{{client}}</option>
-        				<option value="#">{{client}}</option>
+
+    			<select name="client" id="client" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
+                        <option value="#">All</option>
+                        {% for cli in clients %}
+        				<option value="#">{{cli.company_name}}</option>
+                         {% endfor %}
     			</select>
+
     	</div>
     	<div>
 				<label for="location">Location</label>
 				
 				<select name="location" id="location" data-native-menu="false" data-iconpos="left" data-mini="true">
-						<option value="#">{{location}}</option>
-						<option value="#">{{location}}</option>
-						<option value="#">{{location}}</option>
+						{% for loc in locations %}
+                        <option value="#">{{loc.location}}</option>
+						{% endfor %}
 				</select>
 		</div>
     	<div>
     			<label for="product">Product</label>
     			
    				<select name="product" id="product" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
-        				<option>All</option>
-        				<option value="#">{{Eyewash}}</option>
-        				<option value="#">{{AED}}</option>
-        				<option value="#">{{Battery}}</option>
+        				<option value="#">All</option>
+                        {% for prod in products %}
+        				<option value="#">{{prod.product_type}}</option>
+                        {% endfor %}
     			</select>
-    	</div>
     	<div>
     			<label for="type">Type</label>
     			
