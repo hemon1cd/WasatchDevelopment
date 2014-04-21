@@ -14,25 +14,33 @@
 				<tr>
 
 						<th>Expiration Date</th>
+                        <th>Client</th>
+                        <th>Product Type</th>
+                        <th>Product ID</th>
 
 				</tr>
 		</thead>
 		
 		<tbody>
-			    <!-- Where did the Product variable come from -->
-			    {% for products in upcoming_expirations %}
+                {% for prod in upcoming_expirations %}
 			    <!-- In your views.py you only have 'upcoming' and 'everything' -->
 				<tr>
 						<!-- This variable did not match the one above -->
-						<td>{{products}}</td>
+						<td>{{prod.expiration_date}}</td>
+                        <td>{{prod.client}}</td>
+                        <td>{{prod.product_type}}</td>
+                        <td>{{prod.product_id}}</td>
 				</tr>
 
-				{% empty %}	
-			
+				{% empty %}
+
 				<tr>
 						<td>No Upcoming Expirations!</td>
 				</tr>
 				{% endfor %}
+
+			    <!-- Where did the Product variable come from -->
+
 
 		</tbody>
 		

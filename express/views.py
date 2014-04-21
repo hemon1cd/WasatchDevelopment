@@ -13,7 +13,7 @@ from django.core.context_processors import csrf
 #If you need to use something similar to the url template tag in your code
 from django.core.urlresolvers import reverse
 import datetime
-from express.forms import userloginform, userprofileform
+from express.forms import UserLoginForm, UserProfileForm, ServiceForm
 from django.db.models import Q
 
 date = datetime.date.today()
@@ -50,9 +50,13 @@ def edit_add(request,template_name="edit_add.html"):
 def search(request,template_name="search.html"):
     context = {}
 
-    clients = Client.objects.all()
+    clients = Client.objects.all().order_by('company_name')
 
     context['clients'] = clients
+
+    #one_client = Client.objects.get(id = Product.client)
+
+
 
     products = Product.objects.all()
 
@@ -114,7 +118,7 @@ def login(request,template_name="login.html"):
 	# See this? This is wrong. We don't redirect to templates, we redirect to views.
 	# For example: HttpResponseRedirect('/userlogin')
 	# I'm going to let you fix this one and the one under it. 
-        return HttpResponseRedirect('/home')
+        return HttpResponseRedirect('/home/')
 
     return render(template_name, context, context_instance=RequestContext(request))
 
@@ -123,7 +127,7 @@ def logout(request,template_name="login.html"):
     try:
         context['do_not_show_menu'] = True
         logout(request)
-        return HttpResponseRedirect('/logout')
+        return HttpResponseRedirect('/login/')
     except:
         pass
 
@@ -136,9 +140,20 @@ def report(request,template_name="report.html"):
 	return render(template_name, context, context_instance=RequestContext(request))
 
 
+@login_required(login_url='/express/Templates/login')
 def service(request,template_name="service.html"):
 	context = {}
-	context[''] = ""
+
+        if request.method == 'POST':
+
+                form = ServiceForm(request.POST)
+                if form.is_valid():
+
+                        return HttpResponseRedirect('/home/')
+        else:
+            form = ServiceForm()
+
+	context['form'] = form
 	
 	return render(template_name, context, context_instance=RequestContext(request))
 

@@ -34,7 +34,7 @@ class ServiceForm(forms.ModelForm):
                 self.fields['client'].widget = forms.HiddenInput()
                 #self.fields['location'].widget = forms.HiddenInput()
                 self.fields['product'].widget = forms.HiddenInput()
-                #self.fields['product_type'].widget = forms.HiddenInput()
+                self.fields['product_type'].widget = forms.HiddenInput()
 
 
         class Meta:

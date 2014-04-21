@@ -5,11 +5,7 @@
 {% block body %}
 		<h2><center>Service<center></h2>
 		
-		
-
-
-
-<!--	<div>
+		<div>
 				<label for="servicetype">Service Type</label>
 				<select name="servicetype" id="servicetype" data-native-menu="false" data-mini="true" data-iconpos="left">
 						<option value="#" selected="true">Maintenance</option>
@@ -53,17 +49,9 @@
 				        <option value="#">All</option>
     			</select>
 		</div>
--->
-
-		<form action="{% url 'service' %} method="POST">
-				{% csrf_token %}
-
-				{{ form }}
 		
-
-				<input type="submit" value="Service">
-
-		</form>
+		<!-- "Save" Button -->
+		<a href="#" data-role="button" name="save">Save</a>
 
 		
 		
