@@ -16,11 +16,6 @@ import datetime
 from express.forms import UserLoginForm, UserProfileForm, ServiceForm
 from django.db.models import Q
 
-date = datetime.date.today()
-start_week = date - datetime.timedelta(date.weekday())
-end_week = start_week + datetime.timedelta(7)
-
-
 
 def admin_emp_edit_add(request,template_name="admin_emp_edit_add.html"):
 	context = {}
@@ -68,26 +63,20 @@ def search(request,template_name="search.html"):
 
 @login_required(login_url='/express/Templates/login')
 def home(request, template_name="home.html"):
-	context = {}
 
-	start_date = datetime.date.today()
-	end_date = datetime.date.today() + datetime.timedelta(days=30)
-	jon_date = datetime.date.today() + datetime.timedelta(days=60)
+    date1 = datetime.date.today()
+    end_week = date1 + datetime.timedelta(7)
 
- 	products = Product.objects.all()#(expiration_date__range=[start_week, end_week])
+	# start_date = datetime.date.today()
+	# end_date = datetime.date.today() + datetime.timedelta(days=30)
+	# jon_date = datetime.date.today() + datetime.timedelta(days=60)
+    context = {}
 
-	context['products'] = products
+    products = Product.objects.filter(expiration_date__range=[date1,end_week]).order_by('client')
 
-	try:
-			upcoming = (start_date,end_date,jon_date,start_date)
-			
-			context['upcoming_expirations'] = upcoming
-	except:
-			pass
+    context['products'] = products
 
-
-	return render(template_name, context, context_instance=RequestContext(request))
-
+    return render(template_name, context, context_instance=RequestContext(request))
 
 
 def login(request,template_name="login.html"):
@@ -142,19 +131,8 @@ def report(request,template_name="report.html"):
 
 @login_required(login_url='/express/Templates/login')
 def service(request,template_name="service.html"):
-	context = {'product': None, 'clients': Client.objects.all().order_by('company_name')}
-        if 'client' in request.POST:
-            context['client'] = request.POST['client']
-            context['product'] = Product.object.filter(client = context['client']).order_by('company_name')
-            if 'product' in request.POST:
-                context['product'] = request.POST['product']
-        else:
-            context['product'] = []
-            context['client'] = None
-        
+	context = {}
 
-#        ServiceForm.fields['product'].queryset = Products.objects.get(client__id=id)
-#
         if request.method == 'POST':
 
                 form = ServiceForm(request.POST)
@@ -166,7 +144,20 @@ def service(request,template_name="service.html"):
 
 	    context['form'] = form
 	
-	return render(template_name, context, context_instance=RequestContext(request))
+
+
+        clients = Client.objects.all().order_by('company_name')
+        context['clients'] = clients
+
+        locations = Product.objects.all()
+
+        context['locations'] = locations
+
+        products = Product.objects.all()
+
+        context['products'] = products
+
+        return render(template_name, context, context_instance=RequestContext(request))
 
 def employee(request):
 	context = {}

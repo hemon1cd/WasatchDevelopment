@@ -131,7 +131,6 @@ def report(request,template_name="report.html"):
 
 @login_required(login_url='/express/Templates/login')
 def service(request,template_name="service.html"):
-<<<<<<< HEAD
 	context = {}
 
         if request.method == 'POST':
@@ -145,25 +144,20 @@ def service(request,template_name="service.html"):
 
 	    context['form'] = form
 	
-	return render(template_name, context, context_instance=RequestContext(request))
-=======
 
-    context = {}
 
-    clients = Client.objects.all().order_by('company_name')
+        clients = Client.objects.all().order_by('company_name')
+        context['clients'] = clients
 
-    context['clients'] = clients
+        locations = Product.objects.all()
 
-    locations = Product.objects.all()
+        context['locations'] = locations
 
-    context['locations'] = locations
+        products = Product.objects.all()
 
-    products = Product.objects.all()
+        context['products'] = products
 
-    context['products'] = products
-
-    return render(template_name, context, context_instance=RequestContext(request))
->>>>>>> b6a9c419199d4bc26fcf7912adffccb6f28652c8
+        return render(template_name, context, context_instance=RequestContext(request))
 
 def employee(request):
 	context = {}
