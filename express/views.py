@@ -153,7 +153,7 @@ def service(request,template_name="service.html"):
         else:
             form = ServiceForm()
 
-	context['form'] = form
+	    context['form'] = form
 	
 	return render(template_name, context, context_instance=RequestContext(request))
 

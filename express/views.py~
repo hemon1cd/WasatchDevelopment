@@ -142,8 +142,19 @@ def report(request,template_name="report.html"):
 
 @login_required(login_url='/express/Templates/login')
 def service(request,template_name="service.html"):
-	context = {}
+	context = {'product': None, 'clients': Client.objects.all().order_by('company_name')}
+        if 'client' in request.POST:
+            context['client'] = request.POST['client']
+            context['product'] = Product.object.filter(client = context['client']).order_by('company_name')
+            if 'product' in request.POST:
+                context['product'] = request.POST['product']
+        else:
+            context['product'] = []
+            context['client'] = None
+        
 
+#        ServiceForm.fields['product'].queryset = Products.objects.get(client__id=id)
+#
         if request.method == 'POST':
 
                 form = ServiceForm(request.POST)
@@ -153,7 +164,7 @@ def service(request,template_name="service.html"):
         else:
             form = ServiceForm()
 
-	context['form'] = form
+	    context['form'] = form
 	
 	return render(template_name, context, context_instance=RequestContext(request))
 
