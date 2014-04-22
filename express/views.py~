@@ -12,7 +12,7 @@ from django.core.context_processors import csrf
 #If you need to use something similar to the url template tag in your code
 from django.core.urlresolvers import reverse
 import datetime
-#import timezone
+import timezone
 from express.forms import UserLoginForm, UserProfileForm, ServiceForm
 from django.db.models import Q
 
