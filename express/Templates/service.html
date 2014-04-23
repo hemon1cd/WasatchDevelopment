@@ -53,18 +53,28 @@
 				        <option value="#">All</option>
     			</select>
 		</div>
--->
+_ _ _ _ _ _ _ _ _ _ _
 
-		<form action="{% url 'service' %} method="POST">
-				{% csrf_token %}
 
-				{{ form }}
+		<form action="% url 'service' %} method="POST">
+				% csrf_token %}
+
+				 form }}
 		
 
 				<input type="submit" value="Service">
 
 		</form>
 
-		
+-->
+
+        <form action="install/" method="post">{% csrf_token %}
+
+            {{form}}
+
+            <input type="submit" name="submit" value="Install">
+
+
+        </form>
 		
 {% endblock body %}

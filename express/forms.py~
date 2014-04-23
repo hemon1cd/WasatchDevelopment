@@ -32,4 +32,4 @@ class ServiceForm(forms.ModelForm):
 class LocationForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('location')
+        fields = ('location',)

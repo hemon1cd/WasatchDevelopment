@@ -20,14 +20,17 @@ class UserProfileForm(forms.ModelForm):
         model = UserLogin
         fields = ('user_type','first_name','last_name')
 
-class ServiceForm(forms.ModelForm):
+# class ServiceForm(forms.ModelForm):
+#     class Meta:
+#         model = Service
+# #        fields = ('service_type', 'service_id', 'client', 'product', 'service_date', 'next_service_date')
+#         widgets = {
+#                 #'service_type': CharField(attrs={}),
+#             }
+
+class InstallForm(forms.ModelForm):
     class Meta:
         model = Service
-        fields = ('service_type', 'service_id', 'client', 'product', 'service_date', 'next_service_date')
-        widgets = {
-                #'service_type': CharField(attrs={}),
-            }
-
 
 class LocationForm(forms.ModelForm):
     class Meta:
