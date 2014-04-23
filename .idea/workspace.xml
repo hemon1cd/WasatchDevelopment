@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="46d9d5bc-baab-4d79-bdbb-561241e4d82f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/express/Templates/base.html" afterPath="$PROJECT_DIR$/express/Templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/express/forms.py" afterPath="$PROJECT_DIR$/express/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/express/Templates/login.html" afterPath="$PROJECT_DIR$/express/Templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/express/models.py" afterPath="$PROJECT_DIR$/express/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/express/Templates/service.html" afterPath="$PROJECT_DIR$/express/Templates/service.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wasatchexpress/urls.py" afterPath="$PROJECT_DIR$/wasatchexpress/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/express/views.py" afterPath="$PROJECT_DIR$/express/views.py" />
     </list>
     <ignored path="WasatchDevelopment.iws" />
@@ -53,7 +48,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/express/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="156" column="0" selection-start="4655" selection-end="4655" vertical-scroll-proportion="0.29102844" vertical-offset="2207" max-vertical-offset="2670">
+            <state line="173" column="37" selection-start="5130" selection-end="5130" vertical-scroll-proportion="0.7702407" vertical-offset="2243" max-vertical-offset="2700">
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -82,7 +77,7 @@
       <file leaf-file-name="service.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/express/Templates/service.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="2078" selection-end="2078" vertical-scroll-proportion="-45.625" vertical-offset="0" max-vertical-offset="1290">
+            <state line="8" column="0" selection-start="106" selection-end="106" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="390">
               <folding />
             </state>
           </provider>
@@ -114,9 +109,9 @@
       <list>
         <option value="$PROJECT_DIR$/express/Templates/login.html" />
         <option value="$PROJECT_DIR$/express/forms.py" />
-        <option value="$PROJECT_DIR$/express/Templates/service.html" />
         <option value="$PROJECT_DIR$/express/Templates/base.html" />
         <option value="$PROJECT_DIR$/wasatchexpress/urls.py" />
+        <option value="$PROJECT_DIR$/express/Templates/service.html" />
         <option value="$PROJECT_DIR$/express/views.py" />
       </list>
     </option>
@@ -196,24 +191,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="express" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WasatchDevelopment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WasatchDevelopment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="express" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -311,6 +288,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/express/Templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="37" selection-start="221" selection-end="221" vertical-scroll-proportion="0.24249423" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/Templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="19.458334" vertical-offset="467" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/express/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1860">
@@ -334,13 +325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/express/Templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="37" selection-start="221" selection-end="221" vertical-scroll-proportion="0.24249423" vertical-offset="0" max-vertical-offset="570">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/express/Templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="48" selection-start="1112" selection-end="1112" vertical-scroll-proportion="-8.291667" vertical-offset="326" max-vertical-offset="1230">
@@ -350,21 +334,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/express/Templates/service.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2078" selection-end="2078" vertical-scroll-proportion="-45.625" vertical-offset="0" max-vertical-offset="1290">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/express/Templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="19.458334" vertical-offset="467" max-vertical-offset="900">
+        <state line="8" column="0" selection-start="106" selection-end="106" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="390">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/express/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="0" selection-start="4655" selection-end="4655" vertical-scroll-proportion="0.29102844" vertical-offset="2207" max-vertical-offset="2670">
+        <state line="173" column="37" selection-start="5130" selection-end="5130" vertical-scroll-proportion="0.7702407" vertical-offset="2243" max-vertical-offset="2700">
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

@@ -155,7 +155,7 @@ def employee(request):
 
 
 @login_required(login_url='/express/Templates/login')
-def install(request):
+def install(request, template_name="service.html"):
     if request.POST:
         form = InstallForm(request.POST)
         if form.is_valid():
@@ -170,4 +170,5 @@ def install(request):
 
     args['form'] = form
 
-    return render_to_response('service.html', args)
+    #return render_to_response('service.html', args)
+    return render(template_name, args, context_instance=RequestContext(request))
