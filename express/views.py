@@ -17,7 +17,7 @@ from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
 import datetime
 #import timezone
-from express.forms import UserLoginForm, UserProfileForm, InstallForm
+from express.forms import UserLoginForm, UserProfileForm, ServiceInstallForm, ProductInstallForm
 from django.db.models import Q
 from django.contrib import auth
 
@@ -154,21 +154,46 @@ def employee(request):
 	return render(template_name, context, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/express/Templates/login')
-def install(request, template_name="service.html"):
-    if request.POST:
-        form = InstallForm(request.POST)
-        if form.is_valid():
-            form.save()
+# @login_required(login_url='/express/Templates/login')
+# def install(request, template_name="service.html"):
+#     if request.POST:
+#         form = InstallForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#
+#             return HttpResponseRedirect('/install/')
+#     else:
+#         form = InstallForm()
+#
+#     args = {}
+#     args.update(csrf(request))
+#
+#     args['form'] = form
+#
+#     #return render_to_response('service.html', args)
+#     return render(template_name, args, context_instance=RequestContext(request))
 
-            return HttpResponseRedirect('/install/')
+@login_required(login_url='/express/Templates/login')
+def installing(request, template_name="service.html"):
+    if request.POST:
+        sform = ServiceInstallForm(request.POST)
+        pform = ProductInstallForm(request.POST)
+        if sform.is_valid() and pform.is_valid():
+           new_install = sform.save()
+           for pf in pform:
+                new_product = pf.save(commit=False)
+                new_product.Service = new_install
+                new_product.save()
+           return HttpResponseRedirect('/installing/')
     else:
-        form = InstallForm()
+        sform = ServiceInstallForm()
+        pform = ProductInstallForm
 
     args = {}
     args.update(csrf(request))
 
-    args['form'] = form
+    args['sform'] = sform
+    args['pform'] = pform
 
-    #return render_to_response('service.html', args)
     return render(template_name, args, context_instance=RequestContext(request))
+

@@ -18,6 +18,8 @@ urlpatterns = patterns('',
 #	url(r'^service','express.views.service',name="service"),
 	url(r'^logout','express.views.login',name="logout"),
     url(r'^auth/','express.views.auth_view',name="auth_view"),
-    url(r'^install/', 'express.views.install', name="install")
+#    url(r'^install/', 'express.views.install', name="install"),
+    url(r'^installing/', 'express.views.installing', name="installing")
+
 
 )

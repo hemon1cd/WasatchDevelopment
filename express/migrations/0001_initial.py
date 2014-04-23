@@ -65,7 +65,7 @@ class Migration(SchemaMigration):
             ('service_id', self.gf('django.db.models.fields.CharField')(max_length=250, primary_key=True)),
             ('service_type', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('service_date', self.gf('django.db.models.fields.DateField')()),
-            ('next_service_date', self.gf('django.db.models.fields.DateField')()),
+            ('expiration_date', self.gf('django.db.models.fields.DateField')(null=True)),
             ('user_login', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['express.UserLogin'])),
             ('client', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['express.Client'])),
             ('product', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['express.Product'])),
@@ -169,7 +169,7 @@ class Migration(SchemaMigration):
         u'express.service': {
             'Meta': {'ordering': "['service_type', '-service_date', 'client']", 'object_name': 'Service'},
             'client': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['express.Client']"}),
-            'next_service_date': ('django.db.models.fields.DateField', [], {}),
+            'expiration_date': ('django.db.models.fields.DateField', [], {'null': 'True'}),
             'product': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['express.Product']"}),
             'service_date': ('django.db.models.fields.DateField', [], {}),
             'service_id': ('django.db.models.fields.CharField', [], {'max_length': '250', 'primary_key': 'True'}),

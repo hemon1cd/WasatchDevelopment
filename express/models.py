@@ -95,7 +95,7 @@ class Service (models.Model):
 	service_id = models.CharField(max_length=250, primary_key=True)
 	service_type = models.CharField(max_length=50, choices=service_types)
 	service_date = models.DateField ('Date Serviced')
-	next_service_date = models.DateField ('Next Service Date')
+	expiration_date = models.DateField ('Expiration Date', null=True)
 	user_login = models.ForeignKey('UserLogin')
 	client = models.ForeignKey('Client')
 	product = models.ForeignKey('Product')
