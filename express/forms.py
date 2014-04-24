@@ -28,11 +28,22 @@ class UserProfileForm(forms.ModelForm):
 #                 #'service_type': CharField(attrs={}),
 #             }
 
-class InstallForm(forms.ModelForm):
-    class Meta:
-        model = Service
+# class InstallForm(forms.ModelForm):
+#     class Meta:
+#         model = Service
 
 class LocationForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ('location',)
+
+
+class ServiceInstallForm(forms.ModelForm):
+    class Meta:
+        model = Service
+        fields = ('user_login', 'service_id', 'service_date', 'client')
+
+class ProductInstallForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ('location', 'product_type', 'product_id', 'expiration_date')
