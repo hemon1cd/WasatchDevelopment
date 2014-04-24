@@ -93,8 +93,8 @@ class Service (models.Model):
 	('I', 'Install'),
 	)
 	service_type = models.CharField(max_length=50, choices=service_types)
-	service_date = models.DateField ('Date Serviced')
-	expiration_date = models.DateField ('Expiration Date', null=True)
+	service_date = models.DateField('Date Serviced', auto_now_add=True)
+	expiration_date = models.DateField('Expiration Date', null=True, blank=True)
 	user_login = models.ForeignKey('UserLogin')
 	client = models.ForeignKey('Client')
 	product = models.ForeignKey('Product')

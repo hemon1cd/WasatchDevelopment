@@ -80,6 +80,8 @@ def search(request,template_name="search.html"):
 @login_required(login_url='/express/Templates/login')
 def home(request, template_name="home.html"):
 
+
+
     date1 = datetime.date.today()
     end_week = date1 + datetime.timedelta(7)
 
@@ -175,24 +177,26 @@ def employee(request):
 
 @login_required(login_url='/express/Templates/login')
 def installing(request, template_name="service.html"):
+
+    pform = ProductInstallForm(data=request.POST or None)
+
     if request.POST:
-        sform = ServiceInstallForm(request.POST)
-        pform = ProductInstallForm(request.POST)
-        if sform.is_valid() and pform.is_valid():
-           new_install = sform.save()
-           for pf in pform:
-                new_product = pf.save(commit=False)
-                new_product.Service = new_install
-                new_product.save()
-           return HttpResponseRedirect('/installing/')
-    else:
-        sform = ServiceInstallForm()
-        pform = ProductInstallForm
+        if pform.is_valid():
+
+            try:
+                pform.save()
+                Service.objects.create(
+                    service_type = "I",
+                    user_login = request.user,
+                    client = pform.cleaned_data['client'],
+                )
+                return HttpResponseRedirect('/installing/')
+            except Exception, e:
+                print e
 
     args = {}
     args.update(csrf(request))
 
-    args['sform'] = sform
     args['pform'] = pform
 
     return render(template_name, args, context_instance=RequestContext(request))

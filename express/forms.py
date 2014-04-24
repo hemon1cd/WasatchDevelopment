@@ -41,9 +41,9 @@ class LocationForm(forms.ModelForm):
 class ServiceInstallForm(forms.ModelForm):
     class Meta:
         model = Service
-        fields = ('user_login', 'service_id', 'service_date', 'client')
+        fields = ('user_login', 'client')
 
 class ProductInstallForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('location', 'product_type', 'product_id', 'expiration_date')
+        fields = ('client', 'location', 'product_type', 'product_id', 'expiration_date')
