@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b9b6365-a9b0-417a-81bb-eb9fd87d8601" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/express/models.py" afterPath="$PROJECT_DIR$/express/models.py" />
     </list>
     <ignored path="WasatchDevelopment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,19 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/express/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1890">
+            <state line="93" column="5" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.4396985" vertical-offset="1190" max-vertical-offset="1845">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="search.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/express/Templates/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="406" selection-end="406" vertical-scroll-proportion="0.4903047" vertical-offset="18" max-vertical-offset="990">
+            <state line="13" column="33" selection-start="406" selection-end="406" vertical-scroll-proportion="-7.375" vertical-offset="18" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -106,7 +106,6 @@
         <option value="$PROJECT_DIR$/express/Templates/invalid.html" />
         <option value="$PROJECT_DIR$/express/Templates/login.html" />
         <option value="$PROJECT_DIR$/wasatchexpress/settings.py" />
-        <option value="$PROJECT_DIR$/express/models.py" />
         <option value="$PROJECT_DIR$/express/product_text.txt" />
         <option value="$PROJECT_DIR$/express/Templates/product_text.txt" />
         <option value="$PROJECT_DIR$/express/search_indexes.py" />
@@ -114,6 +113,7 @@
         <option value="$PROJECT_DIR$/express/forms.py" />
         <option value="$PROJECT_DIR$/express/views.py" />
         <option value="$PROJECT_DIR$/express/Templates/search.html" />
+        <option value="$PROJECT_DIR$/express/models.py" />
       </list>
     </option>
   </component>
@@ -149,6 +149,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -215,7 +216,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,6 +477,48 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/express/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="36" selection-start="2101" selection-end="2101" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/Templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="33" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/Templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="12" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/Templates/service.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="5" selection-start="1827" selection-end="1827" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="707" selection-end="707" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/express/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="36" selection-start="2101" selection-end="2101" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2670">
@@ -743,16 +785,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/express/models.py">
+    <entry file="file://$PROJECT_DIR$/express/Templates/search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="2268">
+        <state line="13" column="33" selection-start="406" selection-end="406" vertical-scroll-proportion="-7.375" vertical-offset="18" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/express/Templates/search.html">
+    <entry file="file://$PROJECT_DIR$/express/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="406" selection-end="406" vertical-scroll-proportion="0.4903047" vertical-offset="18" max-vertical-offset="990">
+        <state line="93" column="5" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.4396985" vertical-offset="1190" max-vertical-offset="1845">
           <folding />
         </state>
       </provider>
