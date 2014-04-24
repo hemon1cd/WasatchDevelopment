@@ -92,7 +92,6 @@ class Service (models.Model):
 	('M', 'Maintenance'),
 	('I', 'Install'),
 	)
-	service_id = models.CharField(max_length=250, primary_key=True)
 	service_type = models.CharField(max_length=50, choices=service_types)
 	service_date = models.DateField ('Date Serviced')
 	next_service_date = models.DateField ('Next Service Date')
