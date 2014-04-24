@@ -46,4 +46,4 @@ class ServiceInstallForm(forms.ModelForm):
 class ProductInstallForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('client', 'location', 'product_type', 'product_id', 'expiration_date')
+        fields = ('client','location', 'product_type', 'product_id', 'expiration_date')

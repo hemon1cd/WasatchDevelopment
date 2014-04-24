@@ -100,7 +100,7 @@ class Service (models.Model):
 	product = models.ForeignKey('Product')
 
 	def __unicode__( self ):
-		return self.service_id
+		return self.service.pk
 
 
 

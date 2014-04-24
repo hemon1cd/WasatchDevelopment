@@ -12,11 +12,11 @@
 	<table data-role='table' id="upcoming" data-mode="columntoggle" class="ui-responsive table-stroke ui-table ui-table-columntoggle table-stripe ui-body-d">
 		<thead>
 				<tr>
-
-						<th>Expiration Date</th>
                         <th>Client</th>
+						<th>Expiration Date</th>
                         <th>Product Type</th>
                         <th>Product ID</th>
+
 
 				</tr>
 		</thead>
@@ -26,8 +26,8 @@
 			    <!-- In your views.py you only have 'upcoming' and 'everything' -->
 				<tr>
 						<!-- This variable did not match the one above -->
-						<td>{{prod.expiration_date}}</td>
-                        <td id="flip" a href="clientproduct/?clientid={{prod.client.id}}">{{prod.client}}</td>
+						<td id="flip"><a href="/client_product_list/?clientid={{prod.client.id}}">{{prod.client}}</a></td>
+                        <td>{{prod.expiration_date}}</td>
                         <td>{{prod.product_type}}</td>
                         <td>{{prod.product_id}}</td>
 				</tr>
@@ -52,3 +52,18 @@
 </div>
 		
 {% endblock body %}
+
+{% block extra-scripts %}
+
+        <script>
+            $(document).ready(function() {
+                $('a').click(function() {
+                    $("#flipbox").flip({
+                	direction:'tb'
+                    });
+                });
+            });
+        </script>
+
+
+{% endblock extra-scripts %}

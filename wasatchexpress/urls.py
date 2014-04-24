@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^auth/','express.views.auth_view',name="auth_view"),
 #    url(r'^install/', 'express.views.install', name="install"),
     url(r'^installing/', 'express.views.installing', name="installing"),
-    url(r'^clientproduct/', 'express.views.clientproduct', name="installing"),
+    url(r'^client_product_list/', 'express.views.client_product_list', name="client_product_list"),
 
 
 

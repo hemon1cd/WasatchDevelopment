@@ -207,18 +207,16 @@ def client_product_list(request, template_name="clientproduct.html"):
     context = {}
 
     try:
-        clients= Client.objects.get(pk= request.GET.get("client"))
-        products= Product.objects.filter(client= clients).filter(expiration_date__range={datetime.datetime.now(),datetime.timedelta(days=365)})
+        clients = Client.objects.get(pk= request.GET.get("client"))
+        product = Product.objects.filter(client= clients).filter(expiration_date__range={datetime.datetime.now(),datetime.timedelta(days=365)})
 
     except:
 
-        pass
+        product = Product.objects.filter()
 
-    context['products']= products
+    context['product']= product
 
     return render(template_name, context, context_instance=RequestContext(request))
-
-
 
 
 
