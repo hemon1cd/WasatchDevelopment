@@ -201,3 +201,25 @@ def installing(request, template_name="service.html"):
 
     return render(template_name, args, context_instance=RequestContext(request))
 
+
+def client_product_list(request, template_name="clientproduct.html"):
+
+    context = {}
+
+    try:
+        clients= Client.objects.get(pk= request.GET.get("client"))
+        products= Product.objects.filter(client= clients).filter(expiration_date__range={datetime.datetime.now(),datetime.timedelta(days=365)})
+
+    except:
+
+        pass
+
+    context['products']= products
+
+    return render(template_name, context, context_instance=RequestContext(request))
+
+
+
+
+
+
