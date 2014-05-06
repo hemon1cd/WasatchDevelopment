@@ -9,7 +9,9 @@
 
 							<!-- JQuery Mobile CDN Hosted CSS link--> 
 							<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
-							
+
+
+
 							<script>
 								$( document ).on( "pageinit", "#main", function() {
 										$( document ).on( "swiperight", "#main", function( e ) {
@@ -20,7 +22,7 @@
 										});
 								});
 							</script>
-							
+
 					</head>
 
 					<body>
@@ -33,7 +35,9 @@
 														<li data-role="list-divider">Navigation</li>
 														<li><a href="{% url 'home' %}" data-ajax="false">Home</a></li>
 														<li><a href="{% url 'search' %}" data-ajax="false">Search</a></li>
-														<li><a href="{% url 'installing' %} " data-ajax="false">Service</a></li>
+														<li><a href="{% url 'installing' %} " data-ajax="false">Install</a></li>
+														<li><a href="{% url 'maintenance' %} " data-ajax="false">Maintenance</a></li>
+                                                        <li><a href="{% url 'add_user' %} " data-ajax="false">Add User</a></li>
 
 
 														<li data-role="list-divider"></li>
@@ -58,6 +62,18 @@
 									</div> <!-- Header -->
 									
 									<div data-role="content">
+                                        	{% if error %}
+                                            <div class="ui-bar ui-bar-e">
+
+                                            <h3 style="display:inline-block; width:92%; margin-top:5px;">There was an error! </h3><div style="display:inline-block; width:8%; margin-top:0px; text-align:right;"><a href="#" data-role="button" data-icon="delete" data-inline="true" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="e" title="Dismiss" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-e"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Dismiss</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a></div><p style="font-size:85%; margin:-.3em 0 1em;">{{ error }}</p>
+                                            </div>
+                                            {% endif %}
+                                            {% if success %}
+                                            <div class="ui-bar ui-bar-b">
+
+                                            <h3 style="display:inline-block; width:92%; margin-top:5px;">Saved!</h3><div style="display:inline-block; width:8%; margin-top:0px; text-align:right;"><a href="#" data-role="button" data-icon="delete" data-inline="true" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b" title="Dismiss" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Dismiss</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a></div><p style="font-size:85%; margin:-.3em 0 1em;">{{ success }}</p>
+                                            </div>
+                                            {% endif %}
         										{% block body %}
         										
 

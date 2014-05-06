@@ -10,7 +10,7 @@
 
     			<select name="client" id="client" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true">
 						{% if clients %}
-                        <option value="#" selected="True">All</option>
+                        <option value="#" selected="False">All</option>
                         {% for cli in clients %}
         				<option value="#">{{cli.company_name}}</option>
                         {% endfor %}
@@ -35,17 +35,17 @@
 
     			</select>
     	</div>
-    	<div>
-    			<label for="type">Type</label>
-    			
-    			<select name="type" id="type" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true" disabled="disabled">
-				        <option>All</option>
-				        <option value="#">All</option>
-    			</select>
-		</div>
+    	<!--<div>-->
+    			<!--<label for="type">Type</label>-->
+    			<!---->
+    			<!--<select name="type" id="type" multiple="multiple" data-native-menu="false" data-iconpos="left" data-mini="true" disabled="disabled">-->
+				        <!--<option>All</option>-->
+				        <!--<option value="#">All</option>-->
+    			<!--</select>-->
+		<!--</div>-->
 		<div>
 				<label>Date Start</label>
-				<input data-role="month" type="text">
+				<input data-role="month" type="text" value="">
 				
 		</div>
 		<div>

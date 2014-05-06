@@ -5,7 +5,7 @@
         {% if form.errors %}
         <p class="error">Sorry, that is not a valid username or password</p>
         {% endif %}
-		 <h2><center> Log In <center></h2>
+		 <h2><center> Login <center></h2>
 
         <form action="/auth/" method="post">{% csrf_token %}
             <label for="username">User name:</label>
@@ -13,7 +13,7 @@
             <label for="password">Password:</label>
             <input type="password" name="password" value="" id="password">
 
-            <input type="submit" value="login"  />
+            <input type="submit" value="Login"  />
 
         </form>
 {% endblock body %}

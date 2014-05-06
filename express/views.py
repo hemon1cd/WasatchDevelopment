@@ -10,29 +10,46 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 #from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.views.decorators.csrf import csrf_exempt
 from django.core.context_processors import csrf
 #If you need to use something similar to the url template tag in your code
 from django.core.urlresolvers import reverse
 import datetime
 #import timezone
-from express.forms import UserLoginForm, UserProfileForm, ServiceInstallForm, ProductInstallForm
+from express.forms import UserLoginForm, UserProfileForm, ServiceInstallForm, ProductInstallForm, MaintForm
 from django.db.models import Q
 from django.contrib import auth
 
 
-def admin_emp_edit_add(request,template_name="admin_emp_edit_add.html"):
-	context = {}
-	context['adminedit'] = "adminedit1" 
-	
-	return render(template_name, context, context_instance=RequestContext(request))
+@login_required(login_url='/express/Templates/login')
+def add_user(request,template_name="add_user.html"):
+	if request.method == 'POST':
+            form = UserCreationForm(request.POST)
+            if form.is_valid():
+                try:
+                    form.save()
+                    context['success'] = "Successfully added user!"
+                except Exception, e:
+                    context['error'] = "Error. %s" % e
+            #return HttpResponseRedirect('/add_user_success/')
+
+        context = {}
+        context.update(csrf(request))
+
+        context['form'] = UserCreationForm()
+        print context
+        return render(template_name, context, context_instance=RequestContext(request))
+
+def add_user_success(request,template_name="add_user_success.html"):
+    context = {}
+    return render(template_name, context, context_instance=RequestContext(request))
+
 
 def admin_emp_select(request,template_name="admin_emp_select.html"):
-	context = {}
-	context[''] = ""
-	
-	return render(template_name, context, context_instance=RequestContext(request))
+    context = {}
+
+    return render(template_name, context, context_instance=RequestContext(request))
 
 def base(request,template_name="base.html"):
 	context = {}
@@ -53,6 +70,9 @@ def search(request,template_name="search.html"):
     clients = Client.objects.all().order_by('company_name')
 
     context['clients'] = clients
+
+    datenow = datetime.datetime.now()
+    context['datenow'] = datenow
 
     #one_client = Client.objects.get(id = Product.client)
 
@@ -128,7 +148,7 @@ def logout(request,template_name="login.html"):
 def report(request,template_name="report.html"):
 	context = {}
 	context[''] = ""
-	
+
 	return render(template_name, context, context_instance=RequestContext(request))
 
 
@@ -190,7 +210,7 @@ def installing(request, template_name="service.html"):
                     user_login = request.user,
                     client = pform.cleaned_data['client'],
                 )
-                return HttpResponseRedirect('/installing/')
+                return HttpResponseRedirect('service.html')
             except Exception, e:
                 print e
 
@@ -208,7 +228,8 @@ def client_product_list(request, template_name="clientproduct.html"):
 
     try:
         clients = Client.objects.get(pk= request.GET.get("client"))
-        product = Product.objects.filter(client= clients).filter(expiration_date__range={datetime.datetime.now(),datetime.timedelta(days=365)})
+        product = Product.objects.filter(client= clients).filter(company_name__startswith='UT Traffic Ops')
+            #expiration_date__range={datetime.datetime.now(),datetime.timedelta(days=365)})
 
     except:
 
@@ -219,5 +240,42 @@ def client_product_list(request, template_name="clientproduct.html"):
     return render(template_name, context, context_instance=RequestContext(request))
 
 
+@login_required(login_url='/express/Templates/login')
+def maintenance(request, template_name="maintenance.html"):
+
+    pform = ProductInstallForm(data=request.POST or None)
+
+    if request.POST:
+        if pform.is_valid():
+
+            try:
+                pform.save()
+                Service.objects.create(
+                    service_type = "M",
+                    user_login = request.user,
+                    client = pform.cleaned_data['client'],
+                )
+                return HttpResponseRedirect('/maintenance/')
+            except Exception, e:
+                print e
+
+    args = {}
+    args.update(csrf(request))
+
+    args['pform'] = pform
+
+    return render(template_name, args, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/express/Templates/login')
+def report(request, template_name="report.html"):
+
+    context = {}
+
+    reports = Product.objects.all().order_by('client')
+
+    context['reports'] = reports
+
+    return render(template_name, context, context_instance=RequestContext(request))
 
 

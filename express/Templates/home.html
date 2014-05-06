@@ -13,9 +13,9 @@
 		<thead>
 				<tr>
                         <th>Client</th>
-						<th>Expiration Date</th>
-                        <th>Product Type</th>
-                        <th>Product ID</th>
+						<th>Exp</th>
+                        <th>Type</th>
+                        <th>ID</th>
 
 
 				</tr>
@@ -26,7 +26,7 @@
 			    <!-- In your views.py you only have 'upcoming' and 'everything' -->
 				<tr>
 						<!-- This variable did not match the one above -->
-						<td id="flip"><a href="/client_product_list/?clientid={{prod.client.id}}">{{prod.client}}</a></td>
+						<td id="flip"><a href="/client_product_list/?clientid={{prod.client.company_name}}">{{prod.client}}</a></td>
                         <td>{{prod.expiration_date}}</td>
                         <td>{{prod.product_type}}</td>
                         <td>{{prod.product_id}}</td>
@@ -35,7 +35,10 @@
 				{% empty %}
 
 				<tr>
-						<td>No Upcoming Expirations!</td>
+						<td>No</td>
+                        <td>Upcoming</td>
+                        <td>Expirations</td>
+                        <td></td>
 				</tr>
 				{% endfor %}
 

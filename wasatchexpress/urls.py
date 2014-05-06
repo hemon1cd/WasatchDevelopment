@@ -7,7 +7,8 @@ urlpatterns = patterns('',
 	
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^userlogin','express.views.employee',name="Employee"),
-	url(r'^admin_emp_edit_add','express.views.admin_emp_edit_add',name="admin_emp_edit_add"),
+	url(r'^add_user','express.views.add_user',name="add_user"),
+    url(r'^add_user_success','express.views.add_user_success',name="add_user_success"),
 	url(r'^admin_emp_select','express.views.admin_emp_select',name="admin_emp_select"),
 	url(r'^base','express.views.base',name="base"),
 	url(r'^edit_add','express.views.edit_add',name="edit_add"),
@@ -21,6 +22,7 @@ urlpatterns = patterns('',
 #    url(r'^install/', 'express.views.install', name="install"),
     url(r'^installing/', 'express.views.installing', name="installing"),
     url(r'^client_product_list/', 'express.views.client_product_list', name="client_product_list"),
+    url(r'^maintenance/', 'express.views.maintenance', name="maintenance"),
 
 
 

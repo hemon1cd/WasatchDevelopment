@@ -5,7 +5,7 @@
 
 {% block body %}
 
-<h2><center> Product List <center></h2>
+<h2><center> UT Traffic Ops - Product List <center></h2>
 
 <div data-role="content">
 
@@ -13,10 +13,10 @@
 		<thead>
 				<tr>
 
-						<th>Client</th>
+
                         <th>Expiration Date</th>
-                        <th>Product Type</th>
-						<th>Location</th>
+                        <th>Location</th>
+						<th>Product Type</th>
                         <th>Product ID</th>
 
 				</tr>
@@ -27,7 +27,7 @@
 			    <!-- In your views.py you only have 'upcoming' and 'everything' -->
 				<tr>
 						<!-- This variable did not match the one above -->
-						<td>{{prod.client}}</td>
+
 						<td>{{prod.expiration_date}}</td>
 						<td>{{prod.location}}</td>
                         <td>{{prod.product_type}}</td>

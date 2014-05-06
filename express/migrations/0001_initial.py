@@ -64,8 +64,8 @@ class Migration(SchemaMigration):
         db.create_table(u'express_service', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('service_type', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('service_date', self.gf('django.db.models.fields.DateField')()),
-            ('expiration_date', self.gf('django.db.models.fields.DateField')(null=True)),
+            ('service_date', self.gf('django.db.models.fields.DateField')(auto_now_add=True, blank=True)),
+            ('expiration_date', self.gf('django.db.models.fields.DateField')(null=True, blank=True)),
             ('user_login', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['express.UserLogin'])),
             ('client', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['express.Client'])),
             ('product', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['express.Product'])),
@@ -169,10 +169,10 @@ class Migration(SchemaMigration):
         u'express.service': {
             'Meta': {'ordering': "['service_type', '-service_date', 'client']", 'object_name': 'Service'},
             'client': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['express.Client']"}),
-            'expiration_date': ('django.db.models.fields.DateField', [], {'null': 'True'}),
+            'expiration_date': ('django.db.models.fields.DateField', [], {'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'product': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['express.Product']"}),
-            'service_date': ('django.db.models.fields.DateField', [], {}),
+            'service_date': ('django.db.models.fields.DateField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'service_type': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'user_login': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['express.UserLogin']"})
         },

@@ -7,32 +7,37 @@
 <h2><center>Report<center></h2>
 
 <table data-role='table' id="report" data-mode="columntoggle" class="ui-responsive table-stroke ui-table ui-table-columntoggle table-stripe ui-body-d">
-		<thead>
-				<tr>
-						<th>Select</th>
-						<th>Date</th>
-						<th>Client</th>
-						<th>Product</th>
-				</tr>
-		</thead><!-- table header -->
-		
-		<tbody>
-				<tr>
-						<td><input type="checkbox" value="#"></td>
-						<td>${{date}}</td>
-						<td>${{client}}</td>
-						<td>${{product}}</td>
-				</tr>
-		</tbody><!-- table body -->
-		
-		<tfoot>
-		
-		</tfoot>
-		
+        <thead>
+                <tr>
+                        <th>Client</th>
+                        <th>Date</th>
+
+                        <th>Product</th>
+                        <th>Location</th>
+                </tr>
+        </thead><!-- table header -->
+        
+        <tbody>
+                {% for rep in reports %}
+
+                <tr>
+                        <td>{{rep.client}}</td>
+                        <td>{{rep.expiration_date}}</td>
+
+                        <td>{{rep.product_id}}</td>
+                        <td>{{rep.location}}</td>
+                </tr>
+            {% endfor %}
+        </tbody><!-- table body -->
+        
+        <tfoot>
+        
+        </tfoot>
+        
 </table>
 
-		<!-- "Serviced" Button -->
-		<a href="#" data-role="button" name="serviced" data-mini="true">Serviced</a>
-		
-		
+        <!--&lt;!&ndash; "Serviced" Button &ndash;&gt;-->
+        <!--<a href="#" data-role="button" name="New Search" data-mini="true">Serviced</a>-->
+        <!---->
+        
 {% endblock body %}

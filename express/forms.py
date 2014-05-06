@@ -6,7 +6,8 @@ from django.forms import ModelForm
 from express.models import UserLogin, Client, Product, Aed, Battery, Eyewash, Service
 from django.contrib.auth.models import User
 from django.forms.widgets import Input
-from datetime import date
+from datetime import datetime
+
 
 class UserLoginForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -19,6 +20,9 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserLogin
         fields = ('user_type','first_name','last_name')
+
+
+
 
 # class ServiceForm(forms.ModelForm):
 #     class Meta:
@@ -47,3 +51,8 @@ class ProductInstallForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ('client','location', 'product_type', 'product_id', 'expiration_date')
+
+class MaintForm(forms.ModelForm):
+    class Meta:
+        model = Product
+
