@@ -26,7 +26,7 @@
 			    <!-- In your views.py you only have 'upcoming' and 'everything' -->
 				<tr>
 						<!-- This variable did not match the one above -->
-						<td id="flip"><a href="/client_product_list/?clientid={{prod.client.company_name}}">{{prod.client}}</a></td>
+						<td id="flip"><a href="/client_product_list/?client.id={{prod.client.id}}">{{prod.client}}</a></td>
                         <td>{{prod.expiration_date}}</td>
                         <td>{{prod.product_type}}</td>
                         <td>{{prod.product_id}}</td>

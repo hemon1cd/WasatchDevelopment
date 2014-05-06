@@ -228,12 +228,14 @@ def client_product_list(request, template_name="clientproduct.html"):
 
     try:
         clients = Client.objects.get(pk= request.GET.get("client"))
-        product = Product.objects.filter(client= clients).filter(company_name__startswith='UT Traffic Ops')
-            #expiration_date__range={datetime.datetime.now(),datetime.timedelta(days=365)})
+        product = Product.objects.filter(client= clients).filter(expiration_date__range={datetime.datetime.now() + datetime.timedelta(days=365)})
+
 
     except:
 
         product = Product.objects.filter()
+
+        pass
 
     context['product']= product
 
